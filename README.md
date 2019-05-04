@@ -1,2 +1,2 @@
 # hoanghonn.github.io
-My personal website with Jekyll hosted by Github Pages
+My personal website hosted by Github Pages
