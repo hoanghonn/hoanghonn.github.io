@@ -1,2 +1,2 @@
-# hoanghonn.github.io
-My personal website with Jekyll hosted by Github Pages
+# Hoang Nguyen's Personal Website
+My personal website hosted by Github Pages
