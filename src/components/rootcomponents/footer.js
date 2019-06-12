@@ -1,22 +1,15 @@
-import PropTypes from "prop-types"
-import React from "react"
+// import PropTypes from "prop-types"
+import React, { Component } from "react"
+// import styled from "styled-components";
 
-const Footer = ({ siteTitle }) => (
-  <header>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        {siteTitle}
-      </h1>
-    </div>
-  </header>
-)
-
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteTitle: ``,
+class Footer extends Component {
+  render() {
+    return(
+      <div>
+        <h3>Created by HH</h3>
+      </div>
+    );
+  }
 }
 
 export default Footer

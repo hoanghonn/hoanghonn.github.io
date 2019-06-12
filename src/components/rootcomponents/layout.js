@@ -1,32 +1,61 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
+import styled from "styled-components";
 
 import Nav from "./nav"
-import Social from "./social"
+// import Social from "./social"
 import Footer from "./footer"
+import GlobalStyle from "../../styles/globalstyle"
 
-const Layout = ({ children, data }) => (
-  <div className="container">
-    <Nav siteTitle={data.site.siteMetadata.title} />
-    <Social />
-    {children}
-    <Footer />
-  </div>
-);
+const RootContainer = styled.div`
+  position: absolute;
+  margin: 0 0;
+  width: 100%;
+`
+
+const MainContainer = styled.div`
+  position: relative;
+  height: 100%;
+  width: 50%%;
+  margin: 0 25%;
+`
+
+const Layout = ({ children }) => (
+  <StaticQuery
+    query={layoutQuery}
+    render={data => {
+      return (
+        <RootContainer id="root">
+          <GlobalStyle/>
+          <MainContainer className="container">
+            <Nav />
+            {children}
+            {/* <Social /> */}
+            <Footer />
+          </MainContainer>
+        </RootContainer>
+      )
+    }}
+  />
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
-
-export const pageQuery = graphql`
-  query {
+const layoutQuery = graphql`
+  query LayoutQuery {
     site {
       siteMetadata {
         title
+        author
+        social {
+          facebook
+        }
       }
     }
   }
 `
+
+export default Layout

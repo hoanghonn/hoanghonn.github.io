@@ -3,6 +3,9 @@ module.exports = {
     title: `Personal website`,
     description: `New website`,
     author: `@hoanghonn`,
+    social: {
+      facebook: 'facebook.com/hoanghonnnn'
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,7 +13,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/public/content`,
       },
     },
     `gatsby-transformer-sharp`,

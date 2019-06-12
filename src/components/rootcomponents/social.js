@@ -1,22 +1,28 @@
-import PropTypes from "prop-types"
-import React from "react"
+// import PropTypes from "prop-types"
+import React, { Component } from "react"
+import styled from "styled-components";
 
-const Social = ({ siteTitle }) => (
-  <header>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        {siteTitle}
-      </h1>
-    </div>
-  </header>
-)
+const SocialBar = styled.div`
+  position: absolute;
+  margin: 0 0;
+  float: right;
+`
 
-Social.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const SocialItem = styled.div`
 
-Social.defaultProps = {
-  siteTitle: ``,
+`
+
+class Social extends Component {
+  render() {
+    return(
+      <SocialBar>
+        <SocialItem>Facebook</SocialItem>
+        <SocialItem>Github</SocialItem>
+        <SocialItem>LinkedIn</SocialItem>
+        <SocialItem>Youtube</SocialItem>
+      </SocialBar>
+    );
+  }
 }
 
 export default Social
