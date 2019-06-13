@@ -17,8 +17,8 @@ const RootContainer = styled.div`
 const MainContainer = styled.div`
   position: relative;
   height: 100%;
-  width: 50%%;
-  margin: 0 25%;
+  width: 40%%;
+  margin: 0 30%;
 `
 
 const Layout = ({ children }) => (

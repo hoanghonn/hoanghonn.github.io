@@ -10,13 +10,14 @@ const NavItem = styled.a`
 const NavList = styled.div`
   position: relative;
   text-align: center;
-  padding: 16px;
+  padding: 28px;
 `
 
 const NavLogo = styled.div`
   position: relative;
   text-align: center;
   margin: 0 auto 28px;
+  font-size: 72px;
 `
 
 const NavBar = styled.div`
@@ -30,15 +31,14 @@ class Nav extends Component {
   render() {
     return (
       <NavBar>
-        <NavLogo>
-          <div>Hoang Nguyen</div>
+        <NavLogo>Hoang Nguyen
         </NavLogo>
         <NavList className="navlist">
-          <NavItem href="#about">About</NavItem>
-          <NavItem href="#exp">Experience</NavItem>
-          <NavItem href="#projects">Projects</NavItem>
-          <NavItem href="#blog">Blog</NavItem>
-          <NavItem href="#contact">Contact</NavItem>
+          <NavItem href="#about">ABOUT</NavItem>
+          <NavItem href="#exp">EXPERIENCE</NavItem>
+          <NavItem href="#projects">PROJECTS</NavItem>
+          <NavItem href="#blog">BLOG</NavItem>
+          <NavItem href="#contact">CONTACT</NavItem>
         </NavList>
       </NavBar>
     )

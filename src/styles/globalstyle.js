@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: 'Athene';
+        src: url('../../public/fonts/Athene.otf');
+    }
+
     html {
         overflow-x: hidden;
         font-size: 1em;
@@ -10,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0px;
         background: #F5F5F5;
         font-size: 18px;
-        font-family: "Open Sans", sans-serif;
+        font-family: "Calibri";
         line-height: 1.8;
         color: black;
         font-weight: 300;

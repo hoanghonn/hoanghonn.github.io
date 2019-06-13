@@ -7,11 +7,16 @@ import { StaticQuery } from "gatsby"
 
 const ExpTitle = styled.div`
   text-align: center;
+  padding: 10px 0;
+  margin: 24px 20%;
+  border: 2px solid black;
 `
 const ExpMainContainer = styled.div``
 
 const ExpSectionTitle = styled.div`
   text-align: center;
+  font-size: 35px;
+  margin: 0 0 28px;
 `
 const ExpList = styled.div``
 
@@ -39,9 +44,8 @@ class Experience extends Component {
 
   render() {
     const data = this.props.data
-    console.log(this.state.isActiveId)
     return (
-      <ExpMainContainer id="experience">
+      <ExpMainContainer id="exp">
         <ExpSectionTitle>Experience</ExpSectionTitle>
         <ExpList>
           {data &&

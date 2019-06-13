@@ -33,7 +33,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            name
+            summary
             description
           }
           html

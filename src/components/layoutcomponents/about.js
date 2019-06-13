@@ -2,28 +2,33 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const IntroContainer = styled.div`
+const IntroMainContainer = styled.div`
   width: 100%;
-  height: 90%;
-  background-color: grey;
   position: relative;
+  padding: 16px 0;
 `
 const IntroSectionTitle = styled.div`
   width: 100%;
   height: 10%;
   text-align: center;
+  font-size: 35px;
+  margin: 0 0 28px;
+`
+
+const IntroSummary = styled.div`
+  margin: 28px 10%;
 `
 
 const About = ({ data }) => {
   const { frontmatter } = data[0].node
-  const { title, name, description } = frontmatter
+  const { title, summary, description } = frontmatter
 
   return (
-    <IntroContainer id="about">
+    <IntroMainContainer id="about">
       <IntroSectionTitle>{title}</IntroSectionTitle>
-      <div>{name}</div>
-      <div>{description}</div>
-    </IntroContainer>
+      <IntroSummary>{summary}</IntroSummary>
+      <IntroSummary>{summary}</IntroSummary>
+    </IntroMainContainer>
   )
 }
 
