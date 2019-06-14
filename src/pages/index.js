@@ -5,43 +5,51 @@ import Layout from "../components/rootcomponents/layout"
 import About from "../components/layoutcomponents/about"
 import Experience from "../components/layoutcomponents/experience"
 import Projects from "../components/layoutcomponents/projects"
-import { graphql } from "gatsby";
-
+import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => (
   <Layout>
-      <About data={data.about.edges}/>
-      <Experience data={data.experience.edges}/>
-      <Projects data={data.projects.edges}/>
-    {
-    /* 
-    
+    <About data={data.about.edges} />
+    <Experience data={data.experience.edges} />
+    <Projects data={data.projects.edges} />
+    {/* 
     <Blog/>
-    <Contact/> */
-    }
+    <Contact/> */}
   </Layout>
-);
+)
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-};
+}
 
 export const pageQuery = graphql`
   {
-    about: allMarkdownRemark(filter: {fileAbsolutePath: { regex: "/about/"}}) {
+    about: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/about/" } }
+    ) {
       edges {
         node {
           frontmatter {
             title
             summary
-            description
+            quote
+            photo {
+              childImageSharp {
+                fluid(maxWidth: 1920){
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            list
           }
           html
         }
       }
     }
 
-    experience: allMarkdownRemark(filter: {fileAbsolutePath: { regex: "/experience/"}}) {
+    experience: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/experience/" } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -52,9 +60,11 @@ export const pageQuery = graphql`
           html
         }
       }
-    } 
+    }
 
-    projects: allMarkdownRemark(filter: {fileAbsolutePath: { regex: "/projects/"}}) {
+    projects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -65,8 +75,8 @@ export const pageQuery = graphql`
           html
         }
       }
-    } 
+    }
   }
-`;
+`
 
 export default IndexPage

@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 
 import ProjectContent from "./projectcontent"
@@ -7,19 +7,18 @@ const ProjectsMainContainer = styled.div``
 
 const ProjectsSectionTitle = styled.div`
   text-align: center;
-  font-size: 35px;
-  margin: 0 0 28px;
+  font-size: 30px;
+  margin: 0 0;
 `
 
-const ProjectsList = styled.div`
-`
+const ProjectsList = styled.div``
 
 const ProjectTitle = styled.div`
   text-align: center;
   padding: 10px 0;
   margin: 24px 40%;
   border: 2px solid black;
-  `
+`
 
 class Projects extends Component {
   constructor(props) {
@@ -48,11 +47,11 @@ class Projects extends Component {
     console.log(this.state.isActiveId)
     return (
       <ProjectsMainContainer id="projects">
-        <ProjectsSectionTitle>Projects</ProjectsSectionTitle>
+        <ProjectsSectionTitle>projects</ProjectsSectionTitle>
         <ProjectsList>
           {data &&
             data.map(({ node }, i) => {
-              const { title} = node.frontmatter
+              const { title } = node.frontmatter
               return (
                 <div>
                   <ProjectTitle onClick={() => this.toggleActiveId(i)}>

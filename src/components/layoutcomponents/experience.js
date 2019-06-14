@@ -1,9 +1,7 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 
 import ExpContent from "./expcontent"
-import { StaticQuery } from "gatsby"
 
 const ExpTitle = styled.div`
   text-align: center;
@@ -15,8 +13,8 @@ const ExpMainContainer = styled.div``
 
 const ExpSectionTitle = styled.div`
   text-align: center;
-  font-size: 35px;
-  margin: 0 0 28px;
+  font-size: 30px;
+  margin: 0 0;
 `
 const ExpList = styled.div``
 
@@ -46,7 +44,7 @@ class Experience extends Component {
     const data = this.props.data
     return (
       <ExpMainContainer id="exp">
-        <ExpSectionTitle>Experience</ExpSectionTitle>
+        <ExpSectionTitle>experience</ExpSectionTitle>
         <ExpList>
           {data &&
             data.map(({ node }, i) => {

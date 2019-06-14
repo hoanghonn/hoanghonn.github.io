@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
-import styled from "styled-components";
+import styled from "styled-components"
 
 import Nav from "./nav"
 // import Social from "./social"
@@ -27,7 +27,7 @@ const Layout = ({ children }) => (
     render={data => {
       return (
         <RootContainer id="root">
-          <GlobalStyle/>
+          <GlobalStyle />
           <MainContainer className="container">
             <Nav />
             {children}

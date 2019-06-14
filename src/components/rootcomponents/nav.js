@@ -5,6 +5,7 @@ const NavItem = styled.a`
   margin: 0 10px;
   position: relative;
   text-decoration: none;
+  font-size: 16px;
 `
 
 const NavList = styled.div`
@@ -16,8 +17,10 @@ const NavList = styled.div`
 const NavLogo = styled.div`
   position: relative;
   text-align: center;
-  margin: 0 auto 28px;
+  margin: 0 auto;
   font-size: 72px;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
 `
 
 const NavBar = styled.div`
@@ -31,8 +34,7 @@ class Nav extends Component {
   render() {
     return (
       <NavBar>
-        <NavLogo>Hoang Nguyen
-        </NavLogo>
+        <NavLogo>hoang nguyen</NavLogo>
         <NavList className="navlist">
           <NavItem href="#about">ABOUT</NavItem>
           <NavItem href="#exp">EXPERIENCE</NavItem>
