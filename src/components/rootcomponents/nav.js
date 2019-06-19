@@ -5,13 +5,13 @@ const NavItem = styled.a`
   margin: 0 10px;
   position: relative;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
 `
 
 const NavList = styled.div`
   position: relative;
   text-align: center;
-  padding: 28px;
+  padding: 20px;
 `
 
 const NavLogo = styled.div`

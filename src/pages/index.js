@@ -40,7 +40,7 @@ export const pageQuery = graphql`
                 }
               }
             }
-            list
+            details
           }
           html
         }
@@ -48,14 +48,20 @@ export const pageQuery = graphql`
     }
 
     experience: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/experience/" } }
+      filter: { fileAbsolutePath: { regex: "/experience/" } },
+      sort: {fields: [frontmatter___date], order: DESC}
     ) {
       edges {
         node {
           frontmatter {
+            date
             title
             company
             location
+            range
+            url
+            companydescription
+            jobdescription
           }
           html
         }
@@ -63,7 +69,8 @@ export const pageQuery = graphql`
     }
 
     projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      filter: { fileAbsolutePath: { regex: "/projects/" } },
+      sort: {fields: [frontmatter___index]}
     ) {
       edges {
         node {

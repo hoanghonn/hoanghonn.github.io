@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         margin: 0px;
         background: #F5F5F5;
-        font-size: 15px;
+        font-size: 18px;
         font-family: 'Spectral', serif;
         line-height: 1.8;
         font-weight: 300;

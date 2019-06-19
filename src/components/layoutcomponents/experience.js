@@ -18,11 +18,18 @@ const ExpSectionTitle = styled.div`
 `
 const ExpList = styled.div``
 
+// const ExpCloseButton = styled.div`
+//   border: 2px solid black;
+//   text-align: center;
+//   margin: 0 48%;
+  
+// `
+
 class Experience extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isActiveId: new Set(),
+      isActiveId: new Set([0]),
     }
   }
 
@@ -55,8 +62,11 @@ class Experience extends Component {
                     {title} @ {company}
                   </ExpTitle>
                   {this.state.isActiveId.has(i) && (
-                    <ExpContent content={node} />
-                  )}
+                  <ExpContent content={node} />)
+                  }
+                  {/* {this.state.isActiveId.has(i) && (
+                    <ExpCloseButton onClick={() => this.toggleActiveId(i)}>^</ExpCloseButton>)
+                  } */}
                 </div>
               )
             })}

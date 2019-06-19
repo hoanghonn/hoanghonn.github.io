@@ -11,7 +11,8 @@ const ProjectsSectionTitle = styled.div`
   margin: 0 0;
 `
 
-const ProjectsList = styled.div``
+const ProjectsList = styled.div`
+`
 
 const ProjectTitle = styled.div`
   text-align: center;
@@ -24,7 +25,7 @@ class Projects extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isActiveId: new Set(),
+      isActiveId: new Set([0,1]),
     }
   }
 
