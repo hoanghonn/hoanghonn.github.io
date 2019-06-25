@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import Navigator from "./Navigator"
 import Footer from "./footer"
-import GlobalStyle from "../../styles/globalStyle"
+import GlobalStyle from "../../styles/GlobalStyle"
 
 const RootContainer = styled.div`
   position: absolute;
