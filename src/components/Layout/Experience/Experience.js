@@ -11,7 +11,7 @@ const SectionTitle = styled.div`
   text-align: center;
   font-size: 24px;
   margin: 10px 0 20px 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
 `
 

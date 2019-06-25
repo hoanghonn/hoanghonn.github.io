@@ -37,7 +37,7 @@ export const pageQuery = graphql`
             quote
             photo {
               childImageSharp {
-                fluid(maxWidth: 1920){
+                fluid(maxWidth: 1920) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -50,8 +50,8 @@ export const pageQuery = graphql`
     }
 
     experience: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/experience/" } },
-      sort: {fields: [frontmatter___date], order: DESC}
+      filter: { fileAbsolutePath: { regex: "/experience/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
@@ -71,8 +71,8 @@ export const pageQuery = graphql`
     }
 
     featuredProjects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/featured-projects/" } },
-      sort: {fields: [frontmatter___index]}
+      filter: { fileAbsolutePath: { regex: "/featured-projects/" } }
+      sort: { fields: [frontmatter___index] }
     ) {
       edges {
         node {
@@ -86,7 +86,7 @@ export const pageQuery = graphql`
             projectDescription
             photo {
               childImageSharp {
-                fluid(maxWidth: 1920){
+                fluid(maxWidth: 1920) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -98,8 +98,8 @@ export const pageQuery = graphql`
     }
 
     moreProjects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/more-projects/" } },
-      sort: {fields: [frontmatter___index]}
+      filter: { fileAbsolutePath: { regex: "/more-projects/" } }
+      sort: { fields: [frontmatter___index] }
     ) {
       edges {
         node {

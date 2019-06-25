@@ -30,7 +30,7 @@ const NavLogo = styled.div`
   margin: 5% auto;
   font-size: 60px;
   letter-spacing: 0 px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
 `
 

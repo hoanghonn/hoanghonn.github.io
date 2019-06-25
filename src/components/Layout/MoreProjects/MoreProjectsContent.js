@@ -2,10 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const MoreProjectsContent = ({ content }) => {
-    const { html } = content
-  return (
-    <div>{html}</div>
-  )
+  const { html } = content
+  return <div>{html}</div>
 }
 
 MoreProjectsContent.propTypes = {

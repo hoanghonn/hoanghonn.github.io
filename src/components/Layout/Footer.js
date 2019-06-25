@@ -4,11 +4,11 @@ import React, { Component } from "react"
 
 class Footer extends Component {
   render() {
-    return(
+    return (
       <div>
         <h3>Created by HH</h3>
       </div>
-    );
+    )
   }
 }
 
