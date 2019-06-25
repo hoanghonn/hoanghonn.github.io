@@ -4,7 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import styled from "styled-components"
 
 import Navigator from "./Navigator"
-import Footer from "./footer"
+import Footer from "./Footer"
 import GlobalStyle from "../../styles/GlobalStyle"
 
 const RootContainer = styled.div`
