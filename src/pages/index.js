@@ -1,17 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Layout from "../components/rootcomponents/layout"
-import About from "../components/layoutcomponents/about"
-import Experience from "../components/layoutcomponents/experience"
-import Projects from "../components/layoutcomponents/projects"
+import Layout from "../components/Layout/Layout"
+import About from "../components/Layout/About/About"
+import Experience from "../components/Layout/Experience/Experience"
+import FeaturedProjects from "../components/Layout/FeaturedProjects/FeaturedProjects"
+import MoreProjects from "../components/Layout/MoreProjects/MoreProjects"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <About data={data.about.edges} />
     <Experience data={data.experience.edges} />
-    <Projects data={data.projects.edges} />
+    <FeaturedProjects data={data.featuredProjects.edges} />
+    <MoreProjects data={data.moreProjects.edges} />
     {/* 
     <Blog/>
     <Contact/> */}
@@ -60,16 +62,43 @@ export const pageQuery = graphql`
             location
             range
             url
-            companydescription
-            jobdescription
+            companyDescription
+            jobDescription
           }
           html
         }
       }
     }
 
-    projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } },
+    featuredProjects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/featured-projects/" } },
+      sort: {fields: [frontmatter___index]}
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            summary
+            location
+            range
+            url
+            git
+            projectDescription
+            photo {
+              childImageSharp {
+                fluid(maxWidth: 1920){
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          html
+        }
+      }
+    }
+
+    moreProjects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/more-projects/" } },
       sort: {fields: [frontmatter___index]}
     ) {
       edges {

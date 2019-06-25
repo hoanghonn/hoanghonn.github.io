@@ -1,11 +1,13 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
-    @import url('https://fonts.googleapis.com/css?family=Sacramento&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Raleway:500&display=swap');
 
-    @import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
+
+    @import url('https://fonts.googleapis.com/css?family=Lusitana:400,700&display=swap');
 
     @font-face {
         font-family: 'Athene';
@@ -13,17 +15,14 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        overflow-x: hidden;
-        font-size: 1em;
+        overflow-x: hidden;    
     }
   
     body {
         margin: 0px;
-        background: #F5F5F5;
-        font-size: 18px;
-        font-family: 'Spectral', serif;
-        line-height: 1.8;
-        font-weight: 300;
+        background: white;
+        font-size: 15px;
+        font-family: 'Lusitana', serif;
     }
 `
 
