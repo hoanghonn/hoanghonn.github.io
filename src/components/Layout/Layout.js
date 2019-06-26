@@ -14,45 +14,45 @@ const RootContainer = styled.div`
 
 const MainContainer = styled.div`
   position: relative;
-  width: 40%%;
+  width: 40%;
   margin: 0 30%;
 
-  @media only screen and (max-width: 1440px) {
-    width: 40%%;
+  @media (max-width: 1440px) {
+    width: 40%;
     margin: 0 30%;
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media (max-width: 1200px) {
     width: 70%;
     margin: 0 15%;
   }
 
-  @media only screen and (max-width: 1000px) {
-    width: 70%%;
+  @media (max-width: 1000px) {
+    width: 70%;
     margin: 0 15%;
   }
 
-  @media only screen and (max-width: 768px) {
-    width: 70%%;
+  @media (max-width: 768px) {
+    width: 70%;
     margin: 0 15%;
   }
 
-  @media only screen and (max-width: 600px) {
-    width: 80%%;
+  @media (max-width: 600px) {
+    width: 80%;
     margin: 0 10%;
   }
 
-  @media only screen and (max-width: 480px) {
-    width: 90%%;
-    margin: 0 5%;
+  @media (max-width: 480px) {
+    width: 80%;
+    margin: 0 10%;
   }
 
-  @media only screen and (max-width: 376px) {
+  @media (max-width: 376px) {
     width: 90%;
     margin: 0 5%;
   }
 
-  @media only screen and (max-width: 300px) {
+  @media (max-width: 300px) {
     width: 100%;
     margin: 0 0;
   }

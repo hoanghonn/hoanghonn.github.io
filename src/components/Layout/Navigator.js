@@ -43,7 +43,7 @@ const NavLogo = styled.div`
   }
 
   @media only screen and (max-width: 480px) {
-    font-size: 50px;
+    font-size: 45px;
   }
 
   @media only screen and (max-width: 376px) {
