@@ -1,14 +1,14 @@
-// import PropTypes from "prop-types"
 import React, { Component } from "react"
-// import styled from "styled-components";
+import styled from "styled-components"
+
+const MainContainer = styled.div`
+  text-align: center;
+  padding: 20px 0;
+`
 
 class Footer extends Component {
   render() {
-    return (
-      <div>
-        <h3>Created by HH</h3>
-      </div>
-    )
+    return <MainContainer>©2019 Copyright: hoangtnguyen.com</MainContainer>
   }
 }
 

@@ -1,5 +1,4 @@
 ---
-    title: about me
     summary: My name is Hoang Nguyen and I am a software engineer. I grew up in Hanoi, Vietnam and graduated with a Bachelor's degree in Computer Science from University of Massachusetts Amherst in 2019. I consider myself to be an ambitious and driven adventurer. With my passion for technology, I am working hard towards my goals that is to create useful and game-changing products to improve your life.
     quote: Score big or don't score at all.
     photo: ./about.jpg

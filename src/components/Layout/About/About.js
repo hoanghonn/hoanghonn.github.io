@@ -1,7 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import styled from "styled-components"
+
+import fb from "../../../../public/icons/fb.png"
+import insta from "../../../../public/icons/insta.png"
+import linkedIn from "../../../../public/icons/linkedin.png"
+import gmail from "../../../../public/icons/mail.png"
+import git from "../../../../public/icons/github.png"
 
 const MainContainer = styled.div`
   padding: 16px 0;
@@ -49,9 +54,25 @@ const ListItem = styled.li`
   }
 `
 
+const SocialListContainer = styled.div`
+text-align:center;
+padding: 5px 0;
+`
+
+const SocialItem = styled.a`
+padding: 0 5px;`
+
+const SocialLogo = styled.img``
+
+const ResumeContainer = styled.div`
+text-align: center;
+font-size: 16px;`
+
+const Resume = styled.a``
+
 const About = ({ data }) => {
   const { frontmatter } = data[0].node
-  const { title, summary, quote, photo, details } = frontmatter
+  const {summary, quote, photo, details } = frontmatter
 
   return (
     <MainContainer id="about">
@@ -66,6 +87,26 @@ const About = ({ data }) => {
       <ListContainer>
         {details && details.map((detail, i) => <ListItem>{detail}</ListItem>)}
       </ListContainer>
+      <SocialListContainer>
+        <SocialItem href="#" rel="noopener noreferrer" target="_blank">
+          <SocialLogo src={fb} />
+        </SocialItem>
+        <SocialItem href="#" rel="noopener noreferrer" target="_blank">
+          <SocialLogo src={insta} />
+        </SocialItem>
+        <SocialItem href="#" rel="noopener noreferrer" target="_blank">
+          <SocialLogo src={linkedIn} />
+        </SocialItem>
+        <SocialItem href="#" rel="noopener noreferrer" target="_blank">
+          <SocialLogo src={gmail} />
+        </SocialItem>
+        <SocialItem href="#" rel="noopener noreferrer" target="_blank">
+          <SocialLogo src={git} />
+        </SocialItem>
+      </SocialListContainer>
+      <ResumeContainer>
+        or see my <Resume href="#">resume</Resume>
+      </ResumeContainer>
     </MainContainer>
   )
 }

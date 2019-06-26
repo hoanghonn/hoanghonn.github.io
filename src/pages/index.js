@@ -6,6 +6,7 @@ import About from "../components/Layout/About/About"
 import Experience from "../components/Layout/Experience/Experience"
 import FeaturedProjects from "../components/Layout/FeaturedProjects/FeaturedProjects"
 import MoreProjects from "../components/Layout/MoreProjects/MoreProjects"
+import Contact from "../components/Layout/Contact/Contact"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => (
@@ -14,9 +15,7 @@ const IndexPage = ({ data }) => (
     <Experience data={data.experience.edges} />
     <FeaturedProjects data={data.featuredProjects.edges} />
     <MoreProjects data={data.moreProjects.edges} />
-    {/* 
-    <Blog/>
-    <Contact/> */}
+    <Contact />
   </Layout>
 )
 
@@ -91,6 +90,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+            skills
           }
           html
         }
@@ -105,8 +105,9 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            company
-            location
+            note
+            projectDescription
+            url
           }
           html
         }

@@ -9,7 +9,6 @@ const MainContainer = styled.div`
 
 const Info = styled.div`
   margin: 10px 10% 0 10%;
-  padding-bottom: 16px;
 `
 
 const Summary = styled.div`
@@ -40,6 +39,21 @@ const Image = styled(Img)`
   margin: 0 2%;
 `
 
+const ListContainer = styled.ul`
+  text-align: left;
+  margin: 20px 10%;
+  padding: 0 20px;
+  line-height: 1.7em;
+`
+
+const ListItem = styled.li`
+  list-style-type: none;
+  &:before {
+    content: "▹";
+    padding-right: 5px;
+  }
+`
+
 const FeaturedProjectsContent = ({ content }) => {
   const {
     summary,
@@ -49,6 +63,7 @@ const FeaturedProjectsContent = ({ content }) => {
     git,
     projectDescription,
     photo,
+    skills,
   } = content.frontmatter
   return (
     <MainContainer>
@@ -62,6 +77,9 @@ const FeaturedProjectsContent = ({ content }) => {
         <Image fluid={photo.childImageSharp.fluid} />
         <Image fluid={photo.childImageSharp.fluid} />
       </ImageContainer>
+      <ListContainer>
+        {skills && skills.map((skill, i) => <ListItem>{skill}</ListItem>)}
+      </ListContainer>
     </MainContainer>
   )
 }

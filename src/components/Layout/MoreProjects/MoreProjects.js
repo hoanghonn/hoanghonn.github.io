@@ -1,71 +1,80 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-import MoreProjectsContent from "./MoreProjectsContent"
-
-const MainContainer = styled.div``
+const MainContainer = styled.div`
+  padding: 16px 0;
+`
 
 const SectionTitle = styled.div`
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   margin: 10px 0 20px 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
 `
 
-const ListContainer = styled.div``
+const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+`
 
-const Item = styled.div``
+const Item = styled.a`
+  text-align: center;
+  border: 2px solid black;
+  text-decoration: none;
+  :visited {
+    text-decoration: none;
+    color: black;
+  }
+`
 
 const ItemTitle = styled.div`
-  text-align: center;
-  padding: 10px 0;
-  margin: 24px 40%;
-  border: 2px solid black;
+  padding: 10px 10px;
+`
+
+const ItemDescription = styled.div`
+  text-align: left;
+  padding: 10px 10px;
+  line-height: 1.4em;
 `
 
 class MoreProjects extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isActiveId: new Set([]),
+      isActive: true,
     }
   }
 
-  toggleActiveId = i => {
-    this.setState(state => {
-      if (state.isActiveId.has(i)) {
-        state.isActiveId.delete(i)
-      } else {
-        state.isActiveId.add(i)
-      }
-      const isActiveId = state.isActiveId
-      return {
-        isActiveId,
-      }
-    })
+  toggleActive = () => {
+    this.setState(state => ({
+      isActive: !this.state.isActive,
+    }))
   }
 
   render() {
     const data = this.props.data
-    console.log(this.state.isActiveId)
+    console.log(this.state.isActive)
     return (
       <MainContainer>
-        <SectionTitle>more projects</SectionTitle>
-        <ListContainer>
-          {data &&
-            data.map(({ node }, i) => {
-              const { title } = node.frontmatter
-              return (
-                <Item>
-                  <ItemTitle onClick={() => this.toggleActiveId(i)}>
-                    {title}
-                  </ItemTitle>
-                  {this.state.isActiveId.has(i) && (
-                    <MoreProjectsContent content={node} />
-                  )}
-                </Item>
-              )
-            })}
-        </ListContainer>
+        <SectionTitle onClick={() => this.toggleActive()}>
+          more projects
+        </SectionTitle>
+        {this.state.isActive && (
+          <ListContainer>
+            {data &&
+              data.map(({ node }, i) => {
+                const { title, projectDescription, url } = node.frontmatter
+                return (
+                  <Item href={url} rel="noopener noreferrer" target="_blank">
+                    <ItemTitle>{title}</ItemTitle>
+                    <ItemDescription>{projectDescription}</ItemDescription>
+                  </Item>
+                )
+              })}
+          </ListContainer>
+        )}
       </MainContainer>
     )
   }

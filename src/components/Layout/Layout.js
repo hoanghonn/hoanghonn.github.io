@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 import styled from "styled-components"
 
@@ -27,7 +26,7 @@ const Layout = ({ children }) => (
       return (
         <RootContainer id="root">
           <GlobalStyle />
-          <MainContainer className="container">
+          <MainContainer>
             <Navigator />
             {children}
             <Footer />
@@ -37,10 +36,6 @@ const Layout = ({ children }) => (
     }}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 const layoutQuery = graphql`
   query LayoutQuery {

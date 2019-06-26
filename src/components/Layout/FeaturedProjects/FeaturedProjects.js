@@ -3,23 +3,30 @@ import styled from "styled-components"
 
 import FeaturedProjectsContent from "./FeaturedProjectsContent"
 
-const MainContainer = styled.div``
+const MainContainer = styled.div`
+  padding: 16px 0;
+`
 
 const SectionTitle = styled.div`
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   margin: 10px 0 20px 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
 `
 
 const ListContainer = styled.div``
 
-const Item = styled.div``
+const Item = styled.div`
+  text-align: center;
+`
 
 const ItemTitle = styled.div`
   text-align: center;
-  padding: 10px 0;
-  margin: 24px 40%;
+  padding: 10px 10px;
+  margin: 10px 20%;
   border: 2px solid black;
+  display: inline-block;
 `
 
 class FeaturedProjects extends Component {
@@ -46,10 +53,9 @@ class FeaturedProjects extends Component {
 
   render() {
     const data = this.props.data
-    console.log(this.state.isActiveId)
     return (
       <MainContainer id="featured-projects">
-        <SectionTitle>projects</SectionTitle>
+        <SectionTitle>featured projects</SectionTitle>
         <ListContainer>
           {data &&
             data.map(({ node }, i) => {

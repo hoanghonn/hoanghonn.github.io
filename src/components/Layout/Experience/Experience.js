@@ -55,7 +55,7 @@ class Experience extends Component {
     const data = this.props.data
     return (
       <MainContainer id="experience">
-        <SectionTitle>experience</SectionTitle>
+        <SectionTitle>work experience</SectionTitle>
         <ListContainer>
           {data &&
             data.map(({ node }, i) => {
