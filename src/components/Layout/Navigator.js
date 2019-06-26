@@ -16,6 +16,11 @@ const NavItem = styled.a`
   text-transform: uppercase;
   font-style: normal;
   font-weight: 400;
+  display: inline-block;
+
+  @media only screen and (max-width: 300px) {
+    font-size: 15px;
+  }
 `
 
 const NavList = styled.div`
@@ -32,6 +37,22 @@ const NavLogo = styled.div`
   letter-spacing: 0 px;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 376px) {
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width: 300px) {
+    font-size: 30px;
+  }
 `
 
 class Navigator extends Component {
